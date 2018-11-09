@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <link rel="stylesheet" href="style.css" />
+		<title>Financial Management</title>
+		<style>
+			body {
+        		background-image: url("fc.jpg");
+
+			
+				} 
+ 		</style>
+
+
+		<script>
+			function calc1()
+            {
+                var pv1 = parseFloat(document.getElementById('pv1').value);
+                var rate1 = parseFloat(document.getElementById('rate1').value);
+                var time1 = parseFloat(document.getElementById('time1').value);
+            
+                document.getElementById('result1').value= pv1 * Math.pow((1+(rate1/100)), time1) ;
+
+            }   
+
+
+
+            function calc2()
+            {
+                var pv2 = parseFloat(document.getElementById('pv2').value);
+                var rate2 = parseFloat(document.getElementById('rate2').value);
+                var time2 = parseFloat(document.getElementById('time2').value);
+                var comp2 = parseFloat(document.getElementById('comp2').value);
+                
+				var z = rate2 / comp2;
+				var y = time2 * comp2;
+
+                
+                document.getElementById('result2').value= pv2 * Math.pow((1+(z/100)), y) ;
+
+                  
+            }   
+
+
+               function calc3()
+            {
+                var pv3 = parseFloat(document.getElementById('pv3').value);
+                var rate3 = parseFloat(document.getElementById('rate3').value);
+                var time3 = parseFloat(document.getElementById('time3').value);
+               
+                
+				var i = rate3 / 100;
+				var fv = (Math.pow((1+i), time3) - 1);
+                
+                document.getElementById('result3').value= (pv3 *fv * (1 + i)) / i ;
+
+                  
+            }  
+
+
+            function calc4()
+            {
+                var pv4 = parseFloat(document.getElementById('pv4').value);
+                var rate4 = parseFloat(document.getElementById('rate4').value);
+                var time4 = parseFloat(document.getElementById('time4').value);
+               
+                
+				var i = rate4 / 100;
+				var fv = (Math.pow((1+i), time4) - 1);
+                
+                document.getElementById('result4').value= (pv4 *fv )/ i ;
+
+                  
+            }  
+
+            
+				
+		</script>
+	</head>
+	
+	<body>
+	
+
+    <div class="wrapper">
+    <div class="fixed">
+    <div class="heading">
+        <h1>AMITY <br>FINANCE</h1>
+    </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="#1">  LUMPSUM<br>CALCULATOR</a></li>
+            <li><a href="#2">COMPOUNDING<br>  CALCULATOR</a></li>
+            <li><a href="#3">DUE ANNUITY<br>CALCULATOR</a></li>
+            <li><a href="#4">IMMEDIATE ANNUITY<br>CALCULATOR</a></li>
+            <li><a href="#4"> CASH FLOW<br>CALCULATOR</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="content">
+        <div id="1" class="topic1">
+        <center><h1>LUMPSUM CALCULATOR</h1></center>
+        <div class="section1">
+        <p>PRESENT VALUE :</p> <input type="text" id="pv1" placeholder="RS"/><br/><br/>
+        <p>RATE OF INTEREST: </p><input type="text" id="rate1" placeholder="%"/><br/><br/>
+        <p>TIME:</p> <input type="text" id="time1" placeholder="yrs"/><br/><br/>
+        
+
+        <button onclick="calc1();">RESULT </button>
+        <input type="text" id="result1"/>
+    </div>
+        </div>
+
+        <div id="2" class="topic2">
+        <center><h1>COMPOUNDING CALCULATOR</h1></center>
+        <div class="section2">
+        
+        <p>PRESENT VALUE : </p><input type="text" id="pv2" placeholder="RS"/><br/><br/>
+        <p>RATE OF INTEREST:</p> <input type="text" id="rate2" placeholder="%"/><br/><br/>
+        <p>TIME: </p><input type="text" id="time2" placeholder="yrs"/><br/><br/>
+        <p>COMPOUNDING: </p><input type="text" id="comp2" placeholder="*times"/><br/><br/>
+        
+
+        <button onclick="calc2();">RESULT </button>
+        <input type="text" id="result2"/>
+        </div>
+</div>
+        <div id="3" class="topic3">
+        <center><h1>DUE ANNUITY CALCULATOR</h1></center>
+        <div class="section3">   
+        
+        <p>PRESENT VALUE :</p> <input type="text" id="pv3" placeholder="RS"/><br/><br/>
+         <p>RATE OF INTEREST: </p><input type="text" id="rate3" placeholder="%"/><br/><br/>
+         <p>TIME: </p><input type="text" id="time3" placeholder="yrs"/><br/><br/>
+        
+        
+
+        <button onclick="calc3();">RESULT </button>
+        <input type="text" id="result3"/>
+        </div>
+        </div>
+
+        <div id="4" class="topic4">
+        <center><h1>IMMEDIATE ANNUITY CALCULATOR</h1></center>
+    
+        <div class="section4">
+         <p>PRESENT VALUE : </p><input type="text" id="pv4" placeholder="RS"/><br/><br/>
+         <p>RATE OF INTEREST: </p><input type="text" id="rate4" placeholder="%"/><br/><br/>
+         <p>TIME: </p><input type="text" id="time4" placeholder="yrs"/><br/><br/>
+        
+        
+
+        <button onclick="calc4();">RESULT </button>
+        <input type="text" id="result4"/>
+        </div>
+    </div>
+    </div>
+    <div class="sidebar">
+        Additional Info
+    </div>
+    <div class="footer">
+        This website is developed by MCA-1,GROUP A
+    </div>
+    </div>
+
+
+
+
+
+		
+	</body>
+
+</html>
+
+
+
